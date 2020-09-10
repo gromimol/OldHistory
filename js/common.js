@@ -17,7 +17,9 @@ $(document).ready(function () {
         .attr("value", $(this).attr("data-value"));
     });
 
-  $(".articles-container").jScrollPane();
+  if ($(window).width() > 1300) {
+    $(".articles-container").jScrollPane();
+  }
 
   $(".js--popup").on("click", function (e) {
     e.preventDefault();

@@ -35,6 +35,7 @@
     width: 125px;
     height: 26px;
     background: url(../img/btn_bg.png) center no-repeat;
+    outline: none;
     background-size: cover;
     font-family: arial;
     font-size: 13px;
@@ -82,6 +83,9 @@
     padding-left: 30px;
     border-top: 1px solid #c8c8c8;
 
+    &.flex {
+        padding-left: 0;
+    }
 }
 
 .calendar-events {
@@ -226,17 +230,30 @@
     overflow-y: auto;
 }
 
+.table-event {
+    &+.pagination {
+        border: 1px solid #000;
+        border-top: none;
+
+        li {
+            padding: 0 3px;
+        }
+    }
+}
+
 .table {
     font-size: 11px;
     line-height: 1.2;
     margin-top: 20px;
     border-color: gray;
-    table-layout: fixed;
+    // table-layout: fixed;
     width: 100%;
 
     th {
         font-weight: 700;
         background-color: #ECECEC;
+        vertical-align: middle;
+        padding: 3px 5px;
     }
 
     td {
@@ -258,7 +275,7 @@
         }
 
         a {
-            color: blue;
+            color: #08C;
             text-decoration: underline;
             display: -webkit-box;
             -webkit-line-clamp: 3;
@@ -271,10 +288,55 @@
             }
         }
     }
+
+    &--border {
+        tr {
+            &:nth-child(even) {
+                background-color: #c3defa;
+            }
+
+            &:hover {
+                background-color: #99B8D8;
+            }
+        }
+
+        th,
+        td {
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            padding: 5px;
+            font-size: 12px;
+
+            &:first-child {
+                border-left: 1px solid #000;
+            }
+        }
+
+        th {
+            border-top: 1px solid #000;
+        }
+
+        td {
+            padding: 7px 5px;
+            overflow: hidden;
+
+            &:first-child {
+                max-width: none;
+            }
+
+            &:not(:first-child) {
+                text-align: left;
+            }
+        }
+
+
+    }
 }
 
 .event-descr {
     min-height: 420px;
+    max-height: 500px;
+    overflow-y: auto;
 
     p {
         font-size: 12px;
@@ -285,5 +347,44 @@
         b {
             display: block;
         }
+    }
+}
+
+.notice {
+    font-size: 12px;
+    color: #a5a5a5;
+    padding-bottom: 40px;
+    padding-top: 5px;
+}
+
+#event-inner-lg {
+    .event-descr {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    p {
+        text-align: left;
+        max-width: 260px;
+        font-size: 12px;
+
+        b {
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+
+        span {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+    }
+}
+
+.m-0 {
+    margin: 0 !important;
+
+    &+.select {
+        margin-left: 10px;
     }
 }

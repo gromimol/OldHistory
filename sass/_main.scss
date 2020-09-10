@@ -14,11 +14,10 @@ html {
 }
 
 body {
-  background: #fff url("../img/main-bg.jpg") center 0 no-repeat;
-  background-size: cover;
   line-height: 1.2;
   color: #000;
   font-family: arial;
+  background-color: #000;
   min-height: 100vh;
 }
 
@@ -66,6 +65,12 @@ strong {
   font-size: 12px;
   align-items: center;
   justify-content: center;
+  background: #fff url("../img/main-bg.jpg") center 0 no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
 }
 
 .main {
