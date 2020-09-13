@@ -1247,9 +1247,6 @@ strong {
       left: 20%; } }
 /*1550*/
 @media (max-width: 1300px) {
-  .assistant img {
-    height: 350px; }
-
   .assistant__text {
     min-width: 180px;
     width: 180px; }
